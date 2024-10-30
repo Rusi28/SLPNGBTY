@@ -2,7 +2,7 @@
 const adminPassword = "titkosjelszo";
 
 // Kezdési idő kijelzése
-let startTime = "08:00";
+let startTime = "06:00";
 document.getElementById("start-time-display").innerText = startTime;
 
 // Időközök generálása a dropdown listához

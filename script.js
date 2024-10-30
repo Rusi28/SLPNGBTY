@@ -7,10 +7,10 @@ document.getElementById("start-time-display").innerText = startTime;
 
 // Időközök generálása a dropdown listához
 const betTimeSelect = document.getElementById("bet-time");
-for (let i = 0; i < 24 * 6; i++) { // 24 óra * 6 tízperces időköz
+for (let i = 0; i < 24 * 60; i++) { // 24 óra * 60 perc
     const option = document.createElement("option");
-    const hours = String(Math.floor(i / 6)).padStart(2, "0"); // 6 tízperc van egy órában
-    const minutes = String((i % 6) * 10).padStart(2, "0"); // Szorozzuk 10-zel az egyes lépéseket
+    const hours = String(Math.floor(i / 60)).padStart(2, "0"); // 60 perc van egy órában
+    const minutes = String(i % 60).padStart(2, "0"); // Minden perc külön opcióként
     option.value = `${hours}:${minutes}`;
     option.textContent = `${hours}:${minutes}`;
     betTimeSelect.appendChild(option);

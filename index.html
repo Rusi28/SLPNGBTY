@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautyTakeOne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <!-- Projekt név a fejlécben -->
+        <header class="project-header">
+            <h1>BeautyTakeOne</h1>
+            <p>A filmforgatás inspirálta fogadási alkalmazás</p>
+        </header>
+
+        <div class="container">
+            <!-- Jelszómező az admin bejelentkezéshez -->
+            <div class="admin-login">
+                <label for="admin-password">Admin jelszó:</label>
+                <input type="password" id="admin-password">
+                <button type="button" id="admin-login-btn">Bejelentkezés</button>
+            </div>
+
+            <!-- Admin beállítások (csak helyes jelszó esetén látható) -->
+            <div class="admin-section hidden">
+                <h2>Admin beállítások</h2>
+                <form id="admin-form">
+                    <label for="set-start-time">Kezdési idő beállítása:</label>
+                    <input type="time" id="set-start-time" required>
+                    
+                    <label for="actual-arrival-time">Érkezési idő:</label>
+                    <input type="time" id="actual-arrival-time" required>
+                    
+                    <button type="button" id="save-admin-settings">Mentés</button>
+                </form>
+
+                <!-- Eredmény mentése gomb -->
+                <button type="button" id="save-result-btn" disabled>Fogadások mentése</button>
+                
+                <!-- Kijelentkezés gomb -->
+                <button type="button" id="logout-btn">Kijelentkezés</button>
+            </div>
+
+            <h1 class="start-time">Kezdési idő: <span id="start-time-display">08:00</span></h1>
+            
+            <form id="bet-form">
+                <label for="name">Név:</label>
+                <select id="name">
+                    <option value="Balázs">Balázs - 500 Ft</option>
+                    <option value="Gergő">Gergő - 500 Ft</option>
+                    <option value="Tamás">Tamás - 500 Ft</option>
+                    <option value="Péter">Péter - 500 Ft</option>
+                    <option value="István">István - 500 Ft</option>
+                    <!-- Itt adhatók hozzá további nevek -->
+                </select>
+                
+                <label for="bet-time">Fogadási idő:</label>
+                <select id="bet-time">
+                    <!-- 30 perces időközökkel generáljuk JavaScript-ben -->
+                </select>
+                
+                <button type="submit">Fogadás</button>
+            </form>
+
+            <h2>Fogadások</h2>
+            <ul id="bet-list"></ul>
+
+            <h2>Győztes</h2>
+            <p id="winner-display">Várakozás a fogadásokra...</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
